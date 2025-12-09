@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: tailscale-exit-node
+    env: docker
+    plan: free  # o starter para IP estática
+    healthCheckPath: /health
+    envVars:
+      - key: TAILSCALE_AUTHKEY
+        sync: false
